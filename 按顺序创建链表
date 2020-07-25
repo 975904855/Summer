@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct student 
+{
+	char name[20];
+	int num;
+	struct student *next;
+};
+struct student *creat();
+void main()
+{
+	struct student *head,*p;
+	head=creat();
+	for(p=head;p!=NULL;p=p->next)
+		printf("%2s%2d\n",p->name,p->num);
+}
+struct student *creat()
+{
+	struct student *head,*p,*tail;
+	int num;
+	char name[20];
+	int size;
+	size=sizeof(struct student);
+	head=tail=NULL;
+	printf("num:\tname:\t\n");
+	scanf("%d%s",&num,name);
+	while(num!=0)
+	{
+		p=(struct student*)malloc(size);
+		p->num=num;
+		strcpy(p->name,name);
+		p->next=NULL;
+		if(head==NULL)
+			head=p;
+		
+		tail=p;
+		tail->next=p;
+		printf("num:\tname:\t\n");
+		scanf("%d%s",&num,name);
+
+	}
+	return head;
+
+}
