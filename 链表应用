@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct student
+{
+	int num;
+	char name[10];
+	struct student *next;
+};
+struct student *creat();
+void main()
+{
+	struct student *head,*p;
+	int num;
+	char name[10];
+	head=creat();
+	for(p=head;p!=NULL;p=p->next)
+		printf("%d%s",p->num,p->name);
+
+}
+struct student *creat()
+{
+    struct student *p,*head;
+	int size,num;
+	char name[10];
+	size=sizeof(struct student);
+	p=(struct student*)malloc(size);
+	head=NULL;
+	printf("输入序号，名字\n");
+	scanf("%d%s",&num,name);
+
+	while(num!=0)
+	{
+	
+		p->num=num;
+	    strcpy(p->name,name);
+		p->next=NULL;
+		if(head==NULL)
+		{
+			head=p;
+		}
+		else
+		{
+			p->next=head;
+			head=p;
+		}
+			printf("输入序号，名字\n");
+	scanf("%d%s",&num,name);
+
+	}
+	return head;
+}
