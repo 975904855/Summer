@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+double jyh(double a,double b,double c);
+double jyh2(double a,double b,double c,double s);
+void main()
+{
+	double a,b,c,s,area;
+	scanf("%lf%lf%lf",&a,&b,&c);
+	s=jyh(a,b,c);
+	area=jyh2(a,b,c,s);
+	printf("%lf %lf",s,area);
+}
+double jyh(double a,double b,double c)
+{
+	double s;
+	s=(a+b+c)/2;
+	return s;
+}
+double jyh2(double a,double b,double c,double s)
+{
+	double area;
+	area=sqrt(s*(s-a)*(s-b)*(s-c));
+	return area;
+}
