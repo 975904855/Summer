@@ -1,0 +1,112 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+struct game
+{
+	int num;
+	char name[20];
+	int chinese,math,english;
+	struct game *next;
+};
+struct game *create();
+void cut(struct game *head);
+void main()
+{
+	struct game *ptr,*head,*New,*tail;
+	int a;
+	head=create();
+		if(head==NULL)
+		printf("NULL");
+		scanf("%d",&a);
+    switch(a)
+	{
+	case 1:cut(head);break;
+	case 0:break;
+	}
+/*	   New=tail=NULL;
+	for(ptr=head;ptr!=NULL;ptr=ptr->next)
+	{
+	
+		if(((ptr->num)%2)==1)
+		{
+			if(New==NULL)
+			New=ptr;
+			else
+				tail->next=ptr;
+			tail=ptr;
+		}
+	}
+	for(ptr=New;(ptr->num)<=(tail->num);ptr=ptr->next)
+		printf("%d\t%s\t%d\t%d\t%d\n",ptr->num,ptr->name,ptr->chinese,ptr->math,ptr->english);*/
+
+		
+
+
+}
+struct game *create()
+{
+    struct game *head,*p,*tail;
+	int num,chinese,math,english;
+	char name[20];
+	int size=sizeof(struct game);
+	head=tail=NULL;
+	scanf("%d%s%d%d%d",&num,name,&chinese,&math,&english);
+	getchar();
+	while(num!=0)
+	{
+		p=(struct game*)malloc(size);
+		p->num=num;
+		strcpy(p->name,name);
+		p->chinese=chinese;
+		p->math=math;
+		p->english=english;
+	    p->next=NULL;
+		if(head==NULL)
+			head=p;
+		else
+			tail->next=p;
+		tail=p;
+		scanf("%d%s%d%d%d",&num,name,&chinese,&math,&english);
+
+
+
+	}
+	return head;
+
+
+}
+void cut(struct game *head)
+{
+	struct game *p1,*p2;
+	int m;
+	scanf("%d",&m);
+	while(head!=NULL&&head->num==m)
+	{
+		p2=head;
+	    head=head->next;
+	    free(p2);
+	}
+	if(head==NULL)
+		printf("NULL");
+	p1=head;
+	p2=head->next;
+	while(p2!=NULL)
+	{
+		if(p2->num==m)
+		{
+			p1->next=p2->next;
+			free(p2);
+		}
+		else 
+		    p1=p2;
+		p2=p1->next;
+	
+	}
+   while(head->num!=0)
+   {
+	   printf("%d\t%s\t%d\t%d\t%d\n",head->num,head->name,head->chinese,head->math,head->english);
+	   head=head->next;
+   }
+
+
+}
