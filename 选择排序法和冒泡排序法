@@ -1,0 +1,58 @@
+#include<stdio.h>
+char *bubble(int *p,int n);
+char *xuanze(int *p,int n);
+void main()
+{
+	int i,n,a;
+	int z[20],*p;
+	printf("n:");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&z[i]);
+	}
+	printf("a:\n");
+	scanf("%d",&a);
+	switch(a)
+	{
+	case 1:p=bubble(z,n);break;
+	case 2:p=xuanze(z,n);break;
+	default :printf("over");break;
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("%3d",*(p+i));
+	}
+
+}
+char *bubble(int *p,int n)
+{
+	int i,j,temp;
+	for(i=1;i<n;i++)
+		for(j=0;j<n-i;j++)
+		{
+			if(*(p+j)<*(p+j+1))
+			{	
+				temp=*(p+j+1);
+				*(p+j+1)=*(p+j);
+				*(p+j)=temp;
+			}		
+		}
+	return p;
+}
+char *xuanze(int *p,int n)
+{
+	int i,j,temp,max;
+	for(i=0;i<n-1;i++)
+	{
+		max=i;
+		for(j=i+1;j<n;j++)
+		{if(*(p+i)<*(p+j))
+		max=j;
+		}
+		temp=*(p+i);
+		*(p+i)=*(p+max);
+		*(p+max)=temp;
+		return p;
+	}
+}
