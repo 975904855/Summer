@@ -1,0 +1,27 @@
+#include<stdio.h>
+void main()
+{
+	int a[6][6],n,i,j;
+	int flag=0;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+		for(j=0;j<n;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	for(i=0;i<n;i++)
+		for(j=0;j<i;j++)
+		{
+            if(a[i][j]!=0)
+			{	
+				flag=1;
+				break;
+			}
+
+		}
+    if(flag==0)
+		printf("Yes");
+	if(flag==1)
+		printf("No");
+
+}
