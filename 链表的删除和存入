@@ -1,0 +1,65 @@
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+	FILE *fp,*fp2;
+	char a[200],b[200];
+	char ch;
+	int i,n,j;
+	if((fp=fopen("D:\\lizi.txt","r"))==NULL)
+	{
+		printf("file open error");
+		exit(0);
+	}
+	while(!feof(fp))
+	{
+		ch=fgetc(fp);
+		if(ch!=EOF)fputc(ch,a);
+	}
+	printf("%s",a);
+    n=strlen(a);
+	i=0;
+	j=0;
+	while(i<n)
+	{
+		if(a[i]!='/')
+			b[j]=a[i];
+		if(a[i]=='/'&&a[i+1]=='*')
+		{
+			i++;
+			while(a[i]!='*'||a[i+1]!='/')
+			i++;
+			b[j]=a[i];
+			
+		}
+
+		if(a[i]=='/'&&a[i+1]=='/')
+		{
+		    i++;
+			while(a[i]!='\n')
+			i++;
+			b[j]=a[i];
+		}
+	}
+	if((fp2=fopen("C\\jlf.txt","w"))==NULL)
+	{
+		printf("file open error");
+		exit(0);
+	}
+	while(!feof(fp2))
+	{
+		ch=fgetc(fp2);
+		if(ch!=EOF)fputc(ch,fp2);
+	}
+	if(fclose(fp))
+	{
+		printf("Can close the file");
+		exit(0);
+	}
+	if(fclose(fp2))
+	{
+		printf("Can close the file");
+		exit(0);
+	}
+
+}
