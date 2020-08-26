@@ -1,0 +1,14 @@
+#include<stdio.h>
+void main()
+{
+	int count ,number;
+	count=0;
+	printf("Enter the number");
+	scanf("%d",&number);
+	do{
+		number=number/10;
+		count++;
+	}while(number!=0);
+	printf("It have %d dights.\n",count);
+
+}
