@@ -1,0 +1,59 @@
+#include<stdio.h>
+int flag,result;
+int prime(int m,int n);
+int main ()
+{
+	int m,n;
+	printf("m=");
+	scanf("%d",&m);
+    printf("n=");
+	scanf("%d",&n);
+	flag=prime(m,n);
+	if(flag=1)
+		printf("m是素数");
+	else printf("m不是素数");
+	return 0;
+}
+
+
+int prime(int m,int n)
+{
+	int i,a;
+	a=m;
+	result=0;
+for(a=m;a<=n;a++)
+{
+	for(i=2;i<=a;i++)
+	{
+		if(a%i==0)
+		    break;	
+		if(a%i!=0)
+		{
+			if(i>=a/2)
+			{
+				result=result+a;
+			    break;
+			}
+			
+		}
+	}
+}
+		printf("result=%d",result);
+
+
+    for(i=2;i<=m/2;i++)
+	{
+		if(m%i==0)
+		{
+			flag=0;
+            break;
+		}
+			if(m%i!=0)
+		{
+			if(i>=m/2)
+				flag=1;
+		}
+		return flag;
+
+	}
+}
