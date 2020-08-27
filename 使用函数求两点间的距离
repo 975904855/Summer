@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+double dist(double x1,double x2,double y1,double y2);
+int main()
+{
+	double x1,x2,y1,y2;
+	double longth;
+	printf("x1=");
+	scanf("%lf",&x1);
+	printf("y1=");
+	scanf("%lf",&y1);
+	printf("x2=");
+	scanf("%lf",&x2);
+	printf("y2=");
+	scanf("%lf",&y2);
+	longth=dist(x1,x2,y1,y2);
+	printf("longth=%.2lf",longth);
+	return 0;
+}
+	double dist(double x1,double x2,double y1,double y2)
+	{
+		double x3,y3;
+		double result;
+	x3=fabs(x1-x2);
+	y3=fabs(y1-y2);
+	result=sqrt(pow(x3,2)+pow(y3,2));
+	return result;
+}
