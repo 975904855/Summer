@@ -1,0 +1,24 @@
+#include<stdio.h>
+int sign(int n);
+int main()
+{
+	int x,y;
+	printf("x=");
+	scanf("%d",&x);
+	y=sign(x);
+	printf("y=%d",y);
+	return 0;
+}
+int sign(int n)
+{
+	int result;
+	if(n>0)
+		result=1;
+	if(n==0)
+		result=0;
+	if(n<0)
+	    result=-1;
+
+	return result;
+}
+
