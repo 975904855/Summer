@@ -1,0 +1,58 @@
+#include <stdio.h>
+int main ()
+{
+	int n,myname,i;
+	int yourname;
+	printf("n=:");
+	scanf ("%d",&n);
+	printf ("myname=:");
+	scanf ("%d",&myname);
+	printf ("yourname=:");
+	scanf ("%d",&yourname);
+	i=1;
+	if (yourname<0)
+		printf ("Game over");
+	else
+	{
+	if(yourname==myname)
+		{printf ("Bingo!");}
+	   else if (yourname!=myname)
+		  {printf ("no\n");
+		   printf ("yourname=:");
+	      scanf ("%d",&yourname);
+	      i=i+1;}//1次
+	while(i<3)
+	   scanf ("%d",&yourname);
+	   i++;}
+      else if (yourname==myname)
+	  {printf("Lucky you");
+	{
+	  if (yourname!=myname)//1~2  2~3  2次
+	  {printf("no\n");
+	   printf ("yourname=:");
+	    
+		break;}}
+	while (i>=3&&i<n)//3~4  4~5  5~n
+	{
+		if (yourname!=myname)
+		{printf("no\n");
+		printf ("yourname=:");
+	scanf ("%d",&yourname);
+		i++;}
+		else if (yourname==myname)
+		{printf ("Goodness");
+		
+		break;}
+		else 
+		{printf ("no\n");
+		i++;}}
+   if (i>=n)
+	   printf ("Game over");}
+return 0;
+	}
+	
+	
+    
+
+
+
