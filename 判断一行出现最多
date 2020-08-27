@@ -1,0 +1,32 @@
+#include<stdio.h>
+void main()
+{
+	int a[1000];
+	int i,x,n;
+	int z,b,c,d,e,f,g,h,k,l;
+	z=b=c=d=e=f=g=h=k=l=0;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+	for(i=0;i<n;i++)
+	{
+		while(a[i]!=0)
+		{	x=a[i]%10;
+		    switch(x)
+			{ 
+			case 1:z++;break;
+			case 2:b=b+1;break;
+			case 3:c++;break;
+			case 4:d++;break;
+			case 5:e++;break;
+			case 6:f++;break;
+			case 7:g++;break;
+			case 8:h++;break;
+			case 9:k++;break;
+			case 10:l++;break;
+			}
+            a[i]=a[i]/10;
+		}
+	}
+	printf("%d  %d  %d  %d  %d  %d  %d  %d  %d  %d",z,b,c,d,e,f,g,h,k,l);
+}
