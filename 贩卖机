@@ -1,0 +1,31 @@
+#include <stdio.h>
+int main (void)
+{
+	double i,x,a;
+	
+printf("输入1查询薯片价格\n"
+			"输入2查询爆米花价格\n"
+			"输入3查询巧克力价格\n"
+			"输入4查询可乐价格\n"
+			"输入0退出查询\n");
+	for (i=1;i<=5;i++)
+	{
+		
+		scanf ("%lf",&a);
+	if (a==1)
+	x=3.0;
+     else if (a==2)
+	x=2.5;
+	else if (a==3)
+	x=4.0;
+	else if (a==4)
+	x=3.5;
+	else if (a==5)
+	break;
+	else
+	x=0;
+	printf ("%.1lf\n",x);
+	}
+	printf ("thanks\n");
+	return 0;
+}
