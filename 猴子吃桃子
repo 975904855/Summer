@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main ()
+{
+	int n,i,x;
+	printf("n=");
+	scanf("%d",&n);
+	x=1;
+	for(i=1;i<=n-1;i++)
+		x=(1+x)*2;
+	printf("x=%d",x);
+	return 0;
+
+}
