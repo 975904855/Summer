@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main (void)
+
+{
+	int i,n,p;
+	double x,sum;
+
+	printf ("n=");
+	scanf ("%d",&n);
+
+	sum=0;
+	p=0;
+	for (i=1;i<=n;i++)
+	{
+		printf ("x=");
+		scanf ("%lf",&x);
+		sum=sum+x;
+		if (x<60){p++;}
+
+
+	}
+	printf ("%lf\np=n%d",sum/n,p);
+	
+	return 0;
+}
