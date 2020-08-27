@@ -1,0 +1,21 @@
+#include<stdio.h>
+int max(int a,int b);
+int main ()
+{
+	int a,b,c;
+	printf("a=");
+	scanf("%d",&a);
+	printf("b=");
+	scanf("%d",&b);
+    c=max(a,b);
+	printf("c=%d",c);
+	return 0;
+
+}
+int max(int a,int b)
+{
+	int result;
+	if(a<b)
+		result=b;
+	else result=a;
+	return result;
