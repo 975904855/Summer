@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(void)
+{
+	double x,y;
+	printf ("x=:%lf\n",x);
+	scanf ("%lf",&x);
+
+
+	if (x!=0)
+	{y=1/x;}
+	else{y=0;}
+    
+	printf ("y=:%lf\n",y);
+
+	return 0;
+}
