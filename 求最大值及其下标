@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+	int i,m,n;
+	printf("n=");
+	scanf("%d",&n);
+	int a[10];
+    
+	for(i=0;i<n;i++)
+		scanf("%d",&a[i]);
+	m=a[0];
+	for(i=1;i<=n-1;i++)
+	{
+		if(a[i]>m)
+		{
+			m=a[i];
+		    j++;
+		}
+	}
+	printf("m=%d",m);
+
+	return 0;
+}
