@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main (void)
+{
+	int my=33;
+	int your;
+
+	printf ("your =");
+	scanf ("%d",&your);
+
+	if (your==33)
+	{printf ("you are right\n");}
+	else if (your<33)
+		printf ("you are low\n");
+	else printf ("you are high\n");
+	return 0;
+}
