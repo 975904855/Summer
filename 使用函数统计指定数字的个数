@@ -1,0 +1,27 @@
+#include<stdio.h>
+int countdight(int number,int dight);
+int main()
+{
+	int number,dight,end;
+	printf("number=");
+	scanf("%d",&number);
+	printf("dight=");
+	scanf("%d",&dight);
+    end=countdight(number,dight);
+	printf("end=%d",end);
+	return 0;
+}
+
+int countdight(int number,int dight)
+{
+	int a,result;
+	result=0;
+	while(number>0)
+	{
+		a=number%10;
+		if(a==dight)
+           result++;
+		number=number/10;
+	}
+	return result;
+}
