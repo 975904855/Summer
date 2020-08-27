@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+int main ()
+{
+	int i,j,n,num,x;
+	printf("一年有多少天：");
+	scanf("%d",&x);
+	if(x==365)
+		n=7;
+    printf(" ** **\n");
+	for(i=(n+1)/2;i<=n;i++)
+	{
+		num=fabs((n+1)/2-i);
+		for(j=1;j<=num;j++)
+			printf(" ");
+		for(j=1;j<=n-2*num;j++)
+		printf("*");
+		printf("\n");
+	}
+	return 0;
+
+
+
+
+}
