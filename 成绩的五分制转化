@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main (void)
+{
+	char a;
+	double x;
+
+	printf ("成绩：\n");
+	scanf ("%lf",&x);
+
+	if (x<=90&&x>=80)
+		printf("a=B\n");
+	else if (x<=80&&x>=70)
+		printf("a=C\n");
+	else if (x<=70&&x>=60)
+		printf("a=D\n");
+	else if (x<=60&&x>=0)
+		printf("a=E\n");
+	else if(x>100||x<0)
+		printf ("输入数据错误");
+	
+	return 0;
+}
